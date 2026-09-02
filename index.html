@@ -731,23 +731,14 @@
     });
 
     // ===== بدء التشغيل =====
+    // تسجيل الخروج فوراً عند تحميل الصفحة
+    localStorage.removeItem('current_user');
+    currentUser = null;
+    
     initAdmin();
     updateUI();
     loadProjects();
     updateVisitorStats();
-
-    // التحقق من الجلسة
-    const savedUser = localStorage.getItem('current_user');
-    if (savedUser) {
-        const users = getUsers();
-        if (users[savedUser]) {
-            currentUser = savedUser;
-            updateUI();
-            renderProjects();
-        } else {
-            localStorage.removeItem('current_user');
-        }
-    }
 
     console.log('🚀 الموقع جاهز!');
     // تم إزالة أي ذكر لحساب المسؤول من الكود
