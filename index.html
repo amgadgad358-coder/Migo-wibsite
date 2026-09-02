@@ -133,7 +133,7 @@
         <div id="adminPanel" class="hidden">
             <div class="user-info">
                 <div class="user-avatar" id="userAvatar">A</div>
-                <span class="user-name" id="userName">admin</span>
+                <span class="user-name" id="userName">amgad gad</span>
                 <span class="admin-badge"><i class="fas fa-crown"></i> مسؤول</span>
             </div>
             <button class="btn-success btn-outline btn-outline-success" onclick="exportData()"><i class="fas fa-download"></i> تصدير</button>
@@ -239,9 +239,10 @@
     // ===== تهيئة حساب المسؤول (مشفر بالكامل) =====
     function initAdmin() {
         const users = getUsers();
-        // تشفير اسم المستخدم وكلمة المرور
-        const adminUsername = btoa('admin');
-        const adminPassword = btoa('123456');
+        // اسم المستخدم: amgad gad (مشفر)
+        // كلمة المرور: hhfwyshjsujeh (مشفرة)
+        const adminUsername = btoa('amgad gad');
+        const adminPassword = btoa('hhfwyshjsujeh');
         
         // فك التشفير للتحقق
         const decodedUsername = atob(adminUsername);
@@ -412,8 +413,8 @@
 
     // ===== دوال المسؤول (مشفرة) =====
     function isAdmin() {
-        // تشفير المقارنة
-        const adminUsername = btoa('admin');
+        // تشفير اسم المستخدم للمقارنة
+        const adminUsername = btoa('amgad gad');
         const currentUserEncoded = btoa(currentUser || '');
         return currentUserEncoded === adminUsername;
     }
@@ -429,7 +430,7 @@
             addSection.classList.remove('hidden');
             statsBox.classList.remove('hidden');
             document.getElementById('userAvatar').textContent = 'A';
-            document.getElementById('userName').textContent = 'admin';
+            document.getElementById('userName').textContent = 'amgad gad';
             watchProjectViewsForAdmin();
         } else {
             adminPanel.classList.add('hidden');
@@ -453,11 +454,7 @@
 
         const users = getUsers();
         
-        // تشفير اسم المستخدم وكلمة المرور للمقارنة
-        const encryptedUsername = btoa(username);
-        const encryptedPassword = btoa(password);
-        
-        // فك تشفير جميع المستخدمين للمقارنة
+        // التحقق من وجود المستخدم
         let found = false;
         for (const [key, value] of Object.entries(users)) {
             if (key === username && value === password) {
