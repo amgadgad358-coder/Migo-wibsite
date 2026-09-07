@@ -1,747 +1,363 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض أعمالي</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5377TN36P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Y5377TN36P');
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Tahoma',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:24px}
-        .container{max-width:1000px;width:100%;margin:0 auto;background:white;border-radius:30px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
-        h1{text-align:center;font-size:2.5rem;color:#1e2b3c}
-        .sub{text-align:center;color:#666;margin:10px 0 30px}
-        .header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#a9abacfd;padding:12px 25px;border-radius:20px;margin-bottom:25px}
-        .header .logo{font-size:.95rem;font-weight:bold;color:#7a7cc5}
-        .header .logo span{font-size:.95rem;color:#667eea}
-        .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-        .header-actions .user-info{display:flex;align-items:center;gap:10px}
-        .header-actions .user-avatar{width:38px;height:38px;border-radius:50%;background:#667eea;color:white;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold}
-        .header-actions .user-name{font-weight:bold;color:#1e2b3c;font-size:.95rem}
-        .admin-badge{background:#ffc107;color:#856404;padding:2px 10px;border-radius:50px;font-size:.7rem;font-weight:bold}
-        .btn-outline{background:transparent;color:#667eea;border:2px solid #667eea;padding:6px 18px;border-radius:50px;font-size:.9rem;cursor:pointer;transition:.3s;font-weight:bold}
-        .btn-outline:hover{background:#667eea;color:white}
-        .btn-outline-danger{border-color:#dc3545;color:#dc3545}
-        .btn-outline-danger:hover{background:#dc3545;color:white}
-        .btn-outline-success{border-color:#28a745;color:#28a745}
-        .btn-outline-success:hover{background:#28a745;color:white}
-        .btn-primary{background:#667eea;color:white;border:none;padding:10px 30px;border-radius:50px;font-size:1rem;cursor:pointer;transition:all .3s;font-weight:bold}
-        .btn-primary:hover{transform:scale(1.02);box-shadow:0 8px 25px rgba(102,126,234,0.4)}
-        .btn-danger{background:#dc3545;color:white;border:none;padding:8px 20px;border-radius:50px;cursor:pointer}
-        .btn-danger:hover{background:#c82333}
-        .btn-success{background:#28a745;color:white;border:none;padding:8px 20px;border-radius:50px;cursor:pointer}
-        .btn-success:hover{background:#218838}
-        .login-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(5px)}
-        .login-modal.active{display:flex}
-        .login-modal .login-box{background:white;border-radius:30px;padding:40px 35px;max-width:400px;width:90%;box-shadow:0 30px 80px rgba(0,0,0,0.4);position:relative}
-        .login-modal .close-btn{position:absolute;top:15px;left:20px;font-size:1.5rem;cursor:pointer;color:#999;background:none;border:none;transition:.3s}
-        .login-modal .close-btn:hover{color:#333}
-        .login-modal h2{text-align:center;font-size:1.8rem;color:#1e2b3c;margin-bottom:5px}
-        .login-modal .sub-title{text-align:center;color:#888;margin-bottom:20px}
-        .login-modal input{width:100%;padding:14px 18px;margin:10px 0;border:2px solid #e2e8f0;border-radius:12px;font-size:1rem}
-        .login-modal input:focus{border-color:#667eea;outline:none;box-shadow:0 0 0 3px rgba(102,126,234,0.15)}
-        .login-modal .btn-primary{width:100%;padding:14px;margin-top:10px}
-        .login-modal .login-error{color:#dc3545;margin-top:10px;display:none;text-align:center}
-        .login-modal .register-link{text-align:center;margin-top:15px;font-size:.95rem}
-        .login-modal .register-link span{color:#667eea;cursor:pointer;font-weight:bold}
-        .login-modal .register-link span:hover{text-decoration:underline}
-        .login-modal .back-link{text-align:center;margin-top:10px;font-size:.9rem}
-        .login-modal .back-link span{color:#667eea;cursor:pointer;font-weight:bold}
-        .login-modal .back-link span:hover{text-decoration:underline}
-        .register-box{display:none}
-        .register-box.active{display:block}
-        .stats-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px;background:#f9faff;padding:20px;border-radius:16px;margin:20px 0;border:1px solid #eef2f7}
-        .stats-box .stat-item{text-align:center}
-        .stats-box .stat-number{font-size:2rem;font-weight:bold;color:#667eea}
-        .stats-box .stat-label{color:#888;font-size:.85rem}
-        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:25px;margin:20px 0}
-        .card{background:white;border-radius:16px;padding:25px;border:1px solid #eef2f7;text-align:center;transition:.3s;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
-        .card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
-        .card .emoji{font-size:3rem}
-        .card h3{margin:10px 0;font-size:1.3rem;color:#1e2b3c}
-        .card p{color:#666;margin-bottom:15px;line-height:1.6}
-        .card-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-        .btn{display:inline-block;padding:8px 18px;border-radius:50px;text-decoration:none;font-weight:bold;border:none;cursor:pointer;font-size:.9rem;transition:.2s}
-        .btn-visit{background:#667eea;color:white}
-        .btn-visit:hover{background:#5a67d8}
-        .btn-delete{background:#fc8181;color:white}
-        .btn-delete:hover{background:#f56565}
-        .btn-edit{background:#68d391;color:white}
-        .btn-edit:hover{background:#48bb78}
-        .add-section{margin-top:30px;padding-top:30px;border-top:2px dashed #e2e8f0}
-        .add-section h3{text-align:center;margin-bottom:15px}
-        .add-section input,.add-section textarea{width:100%;max-width:500px;padding:12px 15px;margin:8px auto;border:2px solid #e2e8f0;border-radius:12px;font-size:1rem;display:block}
-        .add-section textarea{min-height:60px;resize:vertical}
-        .add-section .btn-primary{display:block;margin:15px auto;width:auto;padding:12px 50px}
-        .hidden{display:none!important}
-        .alert{padding:12px 20px;border-radius:12px;margin:10px 0;display:none}
-        .alert-success{background:#d4edda;color:#155724;display:block}
-        .alert-error{background:#f8d7da;color:#721c24;display:block}
-        .footer{text-align:center;color:#888;margin-top:30px;padding-top:20px;border-top:1px solid #e2e8f0}
-        .empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;background:#f9faff;border-radius:20px}
-        .empty-state .icon{font-size:4rem;margin-bottom:15px}
-        .empty-state h3{color:#666}
-        .empty-state p{color:#999}
-        @media(max-width:600px){.container{padding:20px}.header{flex-direction:column;gap:10px;text-align:center}.header-actions{justify-content:center}.login-modal .login-box{padding:25px 20px}}
-        .ad,.ads,.adsbygoogle,.advert,.advertisement,.ad-container,.ad-wrapper,.ad-banner,.banner-ad,[data-ad],[data-ad-slot],[data-ad-client],ins.adsbygoogle{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important}
-        :root{--bg:#070b14;--surface:rgba(15,23,42,.86);--surface2:rgba(20,31,52,.78);--text:#f8fafc;--muted:#9aa8bd;--line:rgba(255,255,255,.10);--primary:#7c5cff;--secondary:#21d4c5;--danger:#ff5f76;--success:#35d07f;--shadow:0 25px 80px rgba(0,0,0,.35)}
-        html{scroll-behavior:smooth}
-        body{min-height:100vh;padding:24px 14px;font-family:Tahoma,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 8% 5%,rgba(124,92,255,.27),transparent 30%),radial-gradient(circle at 92% 10%,rgba(33,212,197,.16),transparent 28%),linear-gradient(135deg,#04070d,#0b1220 55%,#07101c)}
-        .container{max-width:1080px;padding:28px;background:rgba(8,15,27,.80);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(24px)}
-        .header{background:linear-gradient(135deg,rgba(124,92,255,.17),rgba(33,212,197,.07));border:1px solid var(--line);border-radius:22px;padding:14px 18px}
-        .header .logo,.header .logo span{color:#fff}
-        .header .logo span{color:#a99bff}
-        h1{font-size:clamp(2.1rem,6vw,3.5rem);margin:24px 0 8px;letter-spacing:-1.5px;background:linear-gradient(90deg,#fff,#aa9cff 55%,#6de9dc);-webkit-background-clip:text;background-clip:text;color:transparent}
-        .sub,#viewerNotice{color:var(--muted)!important}
-        .stats-box{background:linear-gradient(145deg,rgba(20,33,55,.9),rgba(10,20,35,.9));border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
-        .stats-box .stat-number{color:#a99bff}
-        .stats-box .stat-label{color:var(--muted)}
-        .card,.empty-state{background:linear-gradient(145deg,rgba(20,33,55,.92),rgba(10,20,35,.94));color:var(--text);border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
-        .card:hover{transform:translateY(-7px);border-color:rgba(124,92,255,.45);box-shadow:0 24px 55px rgba(0,0,0,.3)}
-        .card h3{color:#fff}
-        .card p{color:#adbad0}
-        .btn-primary,.btn-visit{background:linear-gradient(135deg,#7254ff,#9a7cff);box-shadow:0 10px 28px rgba(124,92,255,.25)}
-        .btn-edit{background:linear-gradient(135deg,#20b879,#35d07f)}
-        .btn-delete{background:linear-gradient(135deg,#ff526b,#ff7c8e)}
-        .btn-outline{color:#e7edf7;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.14)}
-        .btn-outline:hover{color:#fff;background:rgba(124,92,255,.18);border-color:rgba(124,92,255,.55)}
-        .add-section{border-top:1px dashed rgba(255,255,255,.14)}
-        .add-section input,.add-section textarea,.login-modal input{color:#fff;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12)}
-        .add-section input::placeholder,.add-section textarea::placeholder,.login-modal input::placeholder{color:#7e8da4}
-        .add-section input:focus,.add-section textarea:focus,.login-modal input:focus{outline:none;border-color:rgba(124,92,255,.75);box-shadow:0 0 0 4px rgba(124,92,255,.12)}
-        .login-modal{background:rgba(1,5,12,.76)}
-        .login-modal .login-box{background:#0c1728;color:#fff;border:1px solid var(--line)}
-        .login-modal h2{color:#fff}
-        .login-modal .sub-title{color:var(--muted)}
-        .footer{color:#6f8098;border-color:var(--line)}
-        .alert-success{background:rgba(53,208,127,.12);color:#79efaa;border:1px solid rgba(53,208,127,.25)}
-        .alert-error{background:rgba(255,95,118,.12);color:#ff9aaa;border:1px solid rgba(255,95,118,.25)}
-        @media(max-width:600px){body{padding:10px}.container{padding:18px;border-radius:22px}.header{padding:14px}}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Amgad gad - Game Creator and Web Developer">
+
+  <title>Amgad gad | Game Creator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="header">
-    <div class="logo">🚀 <span>معرض</span> أعمالي</div>
-    <div class="header-actions" id="headerActions">
-        <div id="adminPanel" class="hidden">
-            <div class="user-info">
-                <div class="user-avatar" id="userAvatar">A</div>
-                <span class="user-name" id="userName">amgad gad</span>
-                <span class="admin-badge"><i class="fas fa-crown"></i> مسؤول</span>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+
+      <a href="#home" class="logo">
+        Amgad <span>gad</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <p class="small-title">
+            <i class="fa-solid fa-gamepad"></i>
+            GAME CREATOR
+          </p>
+
+          <h1>
+            Amgad <span>gad</span>
+          </h1>
+
+          <h2>Game Creator</h2>
+
+          <p class="hero-description">
+            I create games using Godot, build modern websites using
+            HTML, CSS and JavaScript, write stories for games,
+            and add advertisements to websites.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#services" class="btn primary-btn">
+              My Services
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+              href="https://wa.me/201221902098?text=Hello%20Amgad"
+              class="btn whatsapp-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Contact Me
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-label">
+            WHAT I DO
+          </p>
+
+          <h2>
+            My Services
+          </h2>
+
+          <p>
+            Creative digital services focused on games,
+            websites and interactive experiences.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <!-- GAME DEVELOPMENT -->
+          <article class="service-card">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-gamepad"></i>
             </div>
-            <button class="btn-success btn-outline btn-outline-success" onclick="exportData()"><i class="fas fa-download"></i> تصدير</button>
-            <button class="btn-outline btn-outline-danger" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> خروج</button>
+
+            <h3>
+              Game Development
+            </h3>
+
+            <p>
+              I create games using the Godot Engine with a focus
+              on fun gameplay and lightweight performance.
+            </p>
+
+          </article>
+
+
+          <!-- WEB DEVELOPMENT -->
+          <article class="service-card">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+
+            <h3>
+              Web Development
+            </h3>
+
+            <p>
+              I build websites using HTML, CSS and JavaScript
+              with responsive designs for phones and computers.
+            </p>
+
+          </article>
+
+
+          <!-- STORY WRITING -->
+          <article class="service-card">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <h3>
+              Game Story Writing
+            </h3>
+
+            <p>
+              I write stories, characters and ideas that can make
+              games more interesting and immersive.
+            </p>
+
+          </article>
+
+
+          <!-- ADS -->
+          <article class="service-card">
+
+            <div class="service-icon">
+              <i class="fa-solid fa-rectangle-ad"></i>
+            </div>
+
+            <h3>
+              Website Ads
+            </h3>
+
+            <p>
+              I can add advertisements to websites and organize
+              their placement inside the website design.
+            </p>
+
+          </article>
+
         </div>
-        <div id="guestPanel">
-            <button class="btn-outline" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
-            <button class="btn-outline" onclick="openRegisterModal()"><i class="fas fa-user-plus"></i> إنشاء حساب</button>
-        </div>
-    </div>
-</div>
-<h1>🚀 معرض أعمالي</h1>
-<p id="viewerNotice" style="text-align:center;color:#777;margin-top:-18px;margin-bottom:20px;">👁️ الزوار يمكنهم المشاهدة وفتح الملفات فقط</p>
-<p class="sub">اكتشف مشاريعي وأعمالي</p>
-<div class="stats-box hidden" id="statsBox">
-    <div class="stat-item"><div class="stat-number" id="totalVisitors">0</div><div class="stat-label">👥 إجمالي الزوار</div></div>
-    <div class="stat-item"><div class="stat-number" id="todayVisitors">0</div><div class="stat-label">📅 زوار اليوم</div></div>
-    <div class="stat-item"><div class="stat-number" id="lastVisit">-</div><div class="stat-label">🕐 آخر زيارة</div></div>
-</div>
-<div id="alertMessage" class="alert"></div>
-<div class="grid" id="projectsGrid"></div>
-<div class="add-section hidden" id="addSection">
-    <h3>➕ إضافة ملف / مشروع جديد</h3>
-    <input type="text" id="projectTitle" placeholder="🏷️ اسم الملف أو المشروع">
-    <textarea id="projectDesc" placeholder="📝 وصف الملف أو المشروع"></textarea>
-    <input type="url" id="projectLink" placeholder="🔗 رابط الملف (اختياري)">
-    <input type="file" id="projectFile" accept="*/*">
-    <input type="text" id="projectEmoji" placeholder="😊 إيموجي (اختياري)" maxlength="2">
-    <button class="btn-primary" onclick="addProject()"><i class="fas fa-cloud-upload-alt"></i> رفع / نشر</button>
-    <p style="text-align:center;color:#888;font-size:.85rem;margin-top:8px;">يمكنك وضع رابط مباشر أو رفع الملف.</p>
-</div>
-<div class="footer">© 2026 — جميع الحقوق محفوظة · الزوار مشاهدة فقط</div>
-</div>
-<div class="login-modal" id="loginModal">
-    <div class="login-box">
-        <button class="close-btn" onclick="closeLoginModal()">✕</button>
-        <div id="loginForm">
-            <h2>🔐 تسجيل الدخول</h2>
-            <p class="sub-title">أدخل بياناتك للمتابعة</p>
-            <input type="text" id="loginUsername" placeholder="👤 اسم المستخدم">
-            <input type="password" id="loginPassword" placeholder="🔑 كلمة المرور" onkeydown="if(event.key==='Enter') loginUser()">
-            <button class="btn-primary" onclick="loginUser()"><i class="fas fa-sign-in-alt"></i> دخول</button>
-            <div class="login-error" id="loginError">❌ اسم المستخدم أو كلمة المرور غير صحيحة</div>
-            <div class="register-link">ليس لديك حساب؟ <span onclick="showRegisterForm()">إنشاء حساب جديد</span></div>
-        </div>
-        <div class="register-box" id="registerForm">
-            <h2>📝 حساب جديد</h2>
-            <p class="sub-title">أنشئ حسابك الآن</p>
-            <input type="text" id="registerUsername" placeholder="👤 اسم المستخدم">
-            <input type="password" id="registerPassword" placeholder="🔑 كلمة المرور">
-            <input type="password" id="registerConfirm" placeholder="🔑 تأكيد كلمة المرور" onkeydown="if(event.key==='Enter') registerUser()">
-            <button class="btn-primary" onclick="registerUser()"><i class="fas fa-user-plus"></i> إنشاء حساب</button>
-            <div class="login-error" id="registerError">⚠️ حدث خطأ</div>
-            <div class="back-link">لديك حساب؟ <span onclick="showLoginForm()">تسجيل الدخول</span></div>
-        </div>
-    </div>
-</div>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
-<script>
-    // ===== Firebase =====
-    const firebaseConfig = {
-        projectId: "protofolio-896f6",
-        authDomain: "protofolio-896f6.firebaseapp.com",
-        databaseURL: "https://protofolio-896f6-default-rtdb.firebaseio.com",
-        storageBucket: "protofolio-896f6.firebasestorage.app"
-    };
 
-    let firebaseReady = false;
-    let db = null;
-    let storage = null;
+      </div>
 
-    try {
-        if (firebaseConfig.databaseURL) {
-            firebase.initializeApp(firebaseConfig);
-            db = firebase.database();
-            storage = firebase.storage();
-            firebaseReady = true;
-            console.log("🔥 Firebase متصل");
-        }
-    } catch (e) {
-        console.error("Firebase initialization error:", e);
-        firebaseReady = false;
-    }
+    </section>
 
-    // ===== Google Analytics =====
-    function trackEvent(category, action, label) {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', action, {
-                'event_category': category,
-                'event_label': label
-            });
-        }
-    }
-
-    // ===== قاعدة البيانات =====
-    let projects = [];
-    let currentUser = null;
-    const USERS_KEY = 'app_users_v5';
-    const PROJECTS_KEY = 'public_projects';
-
-    // ===== تهيئة حساب المسؤول (مشفر بالكامل) =====
-    function initAdmin() {
-        const users = getUsers();
-        // اسم المستخدم: amgad gad (مشفر)
-        // كلمة المرور: hhfwyshjsujeh (مشفرة)
-        const adminUsername = btoa('amgad gad');
-        const adminPassword = btoa('hhfwyshjsujeh');
-        
-        // فك التشفير للتحقق
-        const decodedUsername = atob(adminUsername);
-        const decodedPassword = atob(adminPassword);
-        
-        if (!users[decodedUsername]) {
-            users[decodedUsername] = decodedPassword;
-            saveUsers(users);
-            console.log('✅ تم تهيئة النظام');
-        }
-    }
-
-    function getUsers() {
-        const data = localStorage.getItem(USERS_KEY);
-        return data ? JSON.parse(data) : {};
-    }
-
-    function saveUsers(users) {
-        localStorage.setItem(USERS_KEY, JSON.stringify(users));
-    }
-
-    // ===== المشاريع =====
-    function loadProjects() {
-        if (firebaseReady) {
-            db.ref('projects').on('value', snapshot => {
-                const data = snapshot.val();
-                projects = Array.isArray(data) ? data : (data ? Object.values(data) : []);
-                if (isAdmin()) {
-                    db.ref('projectViews').once('value').then(vs => {
-                        const counts = vs.val() || {};
-                        projects = projects.map(p => ({...p, views: counts[p.id] || 0}));
-                        renderProjects();
-                    }).catch(() => renderProjects());
-                } else {
-                    renderProjects();
-                }
-            }, error => {
-                console.error('تعذر تحميل المشاريع من Firebase:', error);
-                loadProjectsLocalFallback();
-            });
-        } else {
-            loadProjectsLocalFallback();
-        }
-    }
-
-    function loadProjectsLocalFallback() {
-        const saved = localStorage.getItem(PROJECTS_KEY);
-        if (saved) {
-            try { projects = JSON.parse(saved); } catch(e) { projects = []; }
-        } else {
-            projects = [];
-        }
-        renderProjects();
-    }
-
-    async function saveProjects() {
-        localStorage.setItem(PROJECTS_KEY, JSON.stringify(projects));
-        if (!firebaseReady) return true;
-        try {
-            await db.ref('projects').set(projects);
-            return true;
-        } catch (error) {
-            console.error('تعذر حفظ المشاريع:', error);
-            showAlert('❌ لم يتم الحفظ على قاعدة البيانات', 'error');
-            return false;
-        }
-    }
-
-    async function countProjectView(id) {
-        if (!firebaseReady) return;
-        try {
-            await db.ref('projectViews/' + id).transaction(v => (v || 0) + 1);
-        } catch (e) {
-            console.warn('تعذر تسجيل مشاهدة المشروع:', e);
-        }
-    }
-
-    function watchProjectViewsForAdmin() {
-        if (!firebaseReady || !isAdmin()) return;
-        db.ref('projectViews').on('value', snapshot => {
-            const counts = snapshot.val() || {};
-            projects.forEach(p => {
-                const el = document.getElementById('views-' + p.id);
-                if (el) el.textContent = counts[p.id] || 0;
-            });
-        });
-    }
-
-    function renderProjects() {
-        const grid = document.getElementById('projectsGrid');
-        if (projects.length === 0) {
-            grid.innerHTML = `
-                <div class="empty-state">
-                    <div class="icon">📭</div>
-                    <h3>لا توجد مشاريع</h3>
-                    <p>سيتم إضافة المشاريع قريباً</p>
-                </div>
-            `;
-            return;
-        }
-        grid.innerHTML = '';
-        projects.forEach(p => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            let actions = `
-                <a href="${p.link}" target="_blank" rel="noopener" class="btn btn-visit" onclick="countProjectView(${p.id}); trackEvent('project', 'visit', '${String(p.title).replace(/'/g, "\\'")}')">
-                    <i class="fas fa-external-link-alt"></i> فتح الملف
-                </a>
-            `;
-            if (isAdmin()) {
-                actions += `
-                    <button class="btn btn-edit" onclick="editProject(${p.id})"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-delete" onclick="deleteProject(${p.id})"><i class="fas fa-trash"></i></button>
-                `;
-            }
-            card.innerHTML = `
-                <div class="emoji">${p.emoji || '🌐'}</div>
-                <h3>${p.title}</h3>
-                <p>${p.desc || 'لا يوجد وصف'}</p>
-                ${isAdmin() ? `<div style="color:#667eea;font-size:.82rem;margin-bottom:10px;">👁️ المشاهدات: <span id="views-${p.id}">${p.views || 0}</span></div>` : ''}
-                <div class="card-actions">${actions}</div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-
-    // ===== إحصائيات الزوار =====
-    async function updateVisitorStats() {
-        if (!firebaseReady || !db) {
-            console.warn('⚠️ Firebase غير متاح، لذلك لن يتم تسجيل الزوار.');
-            return;
-        }
-        const ref = db.ref('site_stats');
-        const today = new Date().toISOString().slice(0, 10);
-        try {
-            if (!sessionStorage.getItem('stats_counted')) {
-                await ref.transaction(stats => {
-                    stats = stats || { total: 0, today: 0, lastDate: null, lastVisit: null };
-                    if (stats.lastDate !== today) {
-                        stats.today = 1;
-                        stats.lastDate = today;
-                    } else {
-                        stats.today = Number(stats.today || 0) + 1;
-                    }
-                    stats.total = Number(stats.total || 0) + 1;
-                    stats.lastVisit = new Date().toLocaleString('ar-EG', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric'
-                    });
-                    return stats;
-                });
-                sessionStorage.setItem('stats_counted', 'true');
-            }
-            ref.on('value', snapshot => {
-                if (!isAdmin()) return;
-                const stats = snapshot.val() || {};
-                document.getElementById('totalVisitors').textContent = stats.total || 0;
-                document.getElementById('todayVisitors').textContent = stats.today || 0;
-                document.getElementById('lastVisit').textContent = stats.lastVisit || '-';
-            });
-        } catch (error) {
-            console.error('❌ فشل تسجيل الزائر في Firebase:', error);
-        }
-    }
-
-    // ===== دوال المسؤول (مشفرة) =====
-    function isAdmin() {
-        // تشفير اسم المستخدم للمقارنة
-        const adminUsername = btoa('amgad gad');
-        const currentUserEncoded = btoa(currentUser || '');
-        return currentUserEncoded === adminUsername;
-    }
-
-    function updateUI() {
-        const adminPanel = document.getElementById('adminPanel');
-        const guestPanel = document.getElementById('guestPanel');
-        const addSection = document.getElementById('addSection');
-        const statsBox = document.getElementById('statsBox');
-        if (isAdmin()) {
-            adminPanel.classList.remove('hidden');
-            guestPanel.classList.add('hidden');
-            addSection.classList.remove('hidden');
-            statsBox.classList.remove('hidden');
-            document.getElementById('userAvatar').textContent = 'A';
-            document.getElementById('userName').textContent = 'amgad gad';
-            watchProjectViewsForAdmin();
-        } else {
-            adminPanel.classList.add('hidden');
-            guestPanel.classList.remove('hidden');
-            addSection.classList.add('hidden');
-            statsBox.classList.add('hidden');
-        }
-    }
-
-    // ===== دوال تسجيل الدخول (مشفرة) =====
-    function loginUser() {
-        const username = document.getElementById('loginUsername').value.trim();
-        const password = document.getElementById('loginPassword').value.trim();
-        const errorEl = document.getElementById('loginError');
-
-        if (!username || !password) {
-            errorEl.textContent = '⚠️ الرجاء إدخال اسم المستخدم وكلمة المرور';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        const users = getUsers();
-        
-        // التحقق من وجود المستخدم
-        let found = false;
-        for (const [key, value] of Object.entries(users)) {
-            if (key === username && value === password) {
-                found = true;
-                break;
-            }
-        }
-        
-        if (found) {
-            currentUser = username;
-            localStorage.setItem('current_user', username);
-            errorEl.style.display = 'none';
-            closeLoginModal();
-            updateUI();
-            renderProjects();
-            showAlert('✅ مرحباً ' + username + '!', 'success');
-            trackEvent('auth', 'login', username);
-        } else {
-            errorEl.textContent = '❌ اسم المستخدم أو كلمة المرور غير صحيحة';
-            errorEl.style.display = 'block';
-            trackEvent('auth', 'login_failed', username || 'unknown');
-        }
-    }
-
-    function registerUser() {
-        const username = document.getElementById('registerUsername').value.trim();
-        const password = document.getElementById('registerPassword').value.trim();
-        const confirm = document.getElementById('registerConfirm').value.trim();
-        const errorEl = document.getElementById('registerError');
-
-        if (!username || !password || !confirm) {
-            errorEl.textContent = '⚠️ الرجاء ملء جميع الحقول';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        if (username.length < 3) {
-            errorEl.textContent = '⚠️ اسم المستخدم 3 أحرف على الأقل';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        if (password.length < 4) {
-            errorEl.textContent = '⚠️ كلمة المرور 4 أحرف على الأقل';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        if (password !== confirm) {
-            errorEl.textContent = '❌ كلمة المرور غير متطابقة';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        const users = getUsers();
-        if (users[username]) {
-            errorEl.textContent = '❌ هذا الاسم مستخدم بالفعل';
-            errorEl.style.display = 'block';
-            return;
-        }
-
-        users[username] = password;
-        saveUsers(users);
-
-        currentUser = username;
-        localStorage.setItem('current_user', username);
-        errorEl.style.display = 'none';
-        closeLoginModal();
-        updateUI();
-        renderProjects();
-        showAlert('✅ تم إنشاء الحساب بنجاح!', 'success');
-        trackEvent('auth', 'register', username);
-    }
-
-    function logoutUser() {
-        trackEvent('auth', 'logout', currentUser || 'unknown');
-        currentUser = null;
-        localStorage.removeItem('current_user');
-        updateUI();
-        renderProjects();
-        showAlert('👋 تم تسجيل الخروج', 'success');
-    }
-
-    // ===== دوال النافذة المنبثقة =====
-    function openLoginModal() {
-        document.getElementById('loginModal').classList.add('active');
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('registerForm').classList.remove('active');
-        document.getElementById('loginError').style.display = 'none';
-        document.getElementById('loginPassword').value = '';
-    }
-
-    function openRegisterModal() {
-        document.getElementById('loginModal').classList.add('active');
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('registerForm').classList.add('active');
-        document.getElementById('registerError').style.display = 'none';
-    }
-
-    function closeLoginModal() {
-        document.getElementById('loginModal').classList.remove('active');
-    }
-
-    function showRegisterForm() {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('registerForm').classList.add('active');
-        document.getElementById('registerError').style.display = 'none';
-    }
-
-    function showLoginForm() {
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('registerForm').classList.remove('active');
-        document.getElementById('loginError').style.display = 'none';
-    }
-
-    // ===== رفع الملفات عبر Firebase Storage =====
-    async function uploadFileToFirebase(file) {
-        if (!firebaseReady || !storage) {
-            throw new Error('Firebase Storage غير متاح');
-        }
-        showAlert('⏳ جاري رفع الملف إلى Firebase Storage...', 'success');
-        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-        const fileRef = storage.ref().child(`projects/${Date.now()}_${safeName}`);
-        await fileRef.put(file);
-        return await fileRef.getDownloadURL();
-    }
-
-    // ===== دوال المشاريع =====
-    async function addProject() {
-        if (!isAdmin()) {
-            showAlert('⚠️ يجب تسجيل الدخول بحساب المسؤول أولاً.', 'error');
-            return;
-        }
-        if (!firebaseReady || !db) {
-            showAlert('❌ Firebase غير متصل. راجع إعدادات Firebase وقواعد Realtime Database.', 'error');
-            return;
-        }
-
-        const title = document.getElementById('projectTitle').value.trim();
-        const desc = document.getElementById('projectDesc').value.trim();
-        const linkInput = document.getElementById('projectLink').value.trim();
-        const fileInput = document.getElementById('projectFile');
-        const file = fileInput.files[0];
-        const emoji = document.getElementById('projectEmoji').value.trim() || '📁';
-
-        if (!title || !desc) {
-            showAlert('⚠️ اكتب الاسم والوصف.', 'error');
-            return;
-        }
-
-        let finalLink = linkInput;
-
-        if (file) {
-            try {
-                finalLink = await uploadFileToFirebase(file);
-            } catch (error) {
-                console.error('File upload error:', error);
-                showAlert('❌ فشل رفع الملف إلى Firebase Storage. تأكد من قواعد Storage.', 'error');
-                return;
-            }
-        }
-
-        if (!finalLink) {
-            showAlert('⚠️ يرجى إدخال رابط أو اختيار ملف.', 'error');
-            return;
-        }
-
-        try {
-            new URL(finalLink);
-        } catch (_) {
-            showAlert('⚠️ رابط الملف غير صحيح', 'error');
-            return;
-        }
-
-        const project = {
-            id: Date.now(),
-            title: title,
-            desc: desc,
-            link: finalLink,
-            emoji: emoji,
-            fileName: file ? file.name : null,
-            createdAt: new Date().toISOString()
-        };
-
-        projects.push(project);
-        const saved = await saveProjects();
-        if (!saved) return;
-
-        renderProjects();
-        document.getElementById('projectTitle').value = '';
-        document.getElementById('projectDesc').value = '';
-        document.getElementById('projectLink').value = '';
-        document.getElementById('projectFile').value = '';
-        document.getElementById('projectEmoji').value = '';
-
-        showAlert('✅ تم نشر الملف/المشروع بنجاح، وسيظهر للزوار كمشاهدة فقط', 'success');
-        trackEvent('project', 'add', title);
-    }
-
-    function editProject(id) {
-        if (!isAdmin()) {
-            showAlert('⚠️ فقط المسؤول يمكنه تعديل المشاريع', 'error');
-            return;
-        }
-        const p = projects.find(x => x.id === id);
-        if (!p) return;
-        const oldTitle = p.title;
-        const newTitle = prompt('✏️ تعديل اسم المشروع:', p.title);
-        if (newTitle && newTitle.trim()) p.title = newTitle.trim();
-        const newDesc = prompt('📝 تعديل الوصف:', p.desc);
-        if (newDesc !== null) p.desc = newDesc.trim() || 'لا يوجد وصف';
-        const newLink = prompt('🔗 تعديل الرابط:', p.link);
-        if (newLink && newLink.trim()) {
-            try { new URL(newLink.trim()); p.link = newLink.trim(); } 
-            catch(_) { showAlert('⚠️ رابط غير صحيح', 'error'); return; }
-        }
-        const newEmoji = prompt('😊 تعديل الإيموجي:', p.emoji || '🌐');
-        if (newEmoji !== null) p.emoji = newEmoji.trim() || '🌐';
-        saveProjects();
-        renderProjects();
-        showAlert('✅ تم تحديث المشروع!', 'success');
-        trackEvent('project', 'edit', oldTitle);
-    }
-
-    function deleteProject(id) {
-        if (!isAdmin()) {
-            showAlert('⚠️ فقط المسؤول يمكنه حذف المشاريع', 'error');
-            return;
-        }
-        if (!confirm('هل أنت متأكد من حذف هذا المشروع؟')) return;
-        const p = projects.find(x => x.id === id);
-        const title = p ? p.title : 'unknown';
-        projects = projects.filter(x => x.id !== id);
-        saveProjects();
-        renderProjects();
-        showAlert('🗑️ تم حذف المشروع', 'success');
-        trackEvent('project', 'delete', title);
-    }
-
-    function exportData() {
-        if (!isAdmin()) {
-            showAlert('⚠️ فقط المسؤول يمكنه تصدير البيانات', 'error');
-            return;
-        }
-        const data = {
-            exportedAt: new Date().toISOString(),
-            totalProjects: projects.length,
-            projects: projects
-        };
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `projects_backup_${Date.now()}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-        showAlert('📥 تم تصدير البيانات بنجاح!', 'success');
-        trackEvent('export', 'download', 'projects_data');
-    }
-
-    // ===== التنبيهات =====
-    function showAlert(msg, type) {
-        const el = document.getElementById('alertMessage');
-        el.textContent = msg;
-        el.className = 'alert alert-' + type;
-        setTimeout(() => { el.style.display = 'none'; }, 4000);
-    }
-
-    // ===== إغلاق النافذة بالضغط خارجها =====
-    document.getElementById('loginModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeLoginModal();
-        }
-    });
-
-    // ===== بدء التشغيل =====
-    // تسجيل الخروج فوراً عند تحميل الصفحة
-    localStorage.removeItem('current_user');
-    currentUser = null;
-    
-    initAdmin();
-    updateUI();
-    loadProjects();
-    updateVisitorStats();
-
-    console.log('🚀 الموقع جاهز!');
-    // تم إزالة أي ذكر لحساب المسؤول من الكود
+<div class="ad-container">
+  <script>
+  atOptions = {
+    'key' : 'cb79c5ed946c0c9753e221db7c5c0845',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
 </script>
+<script src="https://www.highrevenueformat.com/cb79c5ed946c0c9753e221db7c5c0845/invoke.js"></script>
+</div>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+
+      <div class="container">
+
+        <div class="about-box">
+
+          <div class="about-icon">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-label">
+              ABOUT ME
+            </p>
+
+            <h2>
+              I'm Amgad gad
+            </h2>
+
+            <p>
+              I'm a game creator interested in developing games
+              with Godot and creating websites using HTML, CSS
+              and JavaScript.
+            </p>
+
+            <p>
+              I also enjoy creating stories and ideas for games.
+            </p>
+
+            <p>
+              I'm currently working on building my skills
+              and creating my first projects.
+            </p>
+
+            
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <p class="section-label">
+            GET IN TOUCH
+          </p>
+
+          <h2>
+            Let's Create Something
+          </h2>
+
+          <p>
+            Have an idea for a game or website?
+            Contact me directly on WhatsApp.
+          </p>
+
+          <a
+            href="https://wa.me/201221902098?text=Hello%20Amgad"
+            class="contact-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Contact me on WhatsApp
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+<div class="ad-container">
+   <script>
+  atOptions = {
+    'key' : 'cb79c5ed946c0c9753e221db7c5c0845',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/cb79c5ed946c0c9753e221db7c5c0845/invoke.js"></script>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <h3>
+          Amgad <span>gad</span>
+        </h3>
+
+        <p>
+          Game Creator & Web Developer
+        </p>
+
+      </div>
+
+
+      <div class="social-links">
+
+        <a href="#home" aria-label="Home">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a
+          href="https://wa.me/201221902098"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Amgad gad. All rights reserved.
+    </div>
+
+  </footer>
+
 </body>
 </html>
