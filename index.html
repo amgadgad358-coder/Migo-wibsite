@@ -1,412 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="Amgad Gad is a game creator and web developer. Discover Amgad Gad's games, Godot game development, websites, and creative projects.">
-
-  <meta name="author" content="Amgad Gad">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#111827">
-
-  <link rel="canonical" href="https://amgadgad358-coder.github.io/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Amgad Gad - Game Creator">
-  <meta property="og:description" content="Amgad Gad - Game Creator and Web Developer. Games, Godot development, websites, and creative projects.">
-  <meta property="og:url" content="https://amgadgad358-coder.github.io/">
-  <meta property="og:site_name" content="Amgad Gad - Game Creator">
-  <meta property="og:image" content="https://amgadgad358-coder.github.io/favicon.png">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Amgad Gad - Game Creator">
-  <meta name="twitter:description" content="Amgad Gad - Game Creator and Web Developer.">
-
-  <title>Amgad Gad - Game Creator | Godot Game Developer</title>
-
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Amgad Gad - Game Creator",
-    "alternateName": "Amgad Gad Game Creator",
-    "url": "https://amgadgad358-coder.github.io/"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Amgad Gad",
-    "url": "https://amgadgad358-coder.github.io/",
-    "jobTitle": "Game Creator and Web Developer",
-    "knowsAbout": [
-      "Game Development",
-      "Godot",
-      "Web Development",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Game Story Writing"
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>migo store</title>
+<meta name="description" content="متجر migo store - تطبيقات وألعاب مجانية">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#08090d;color:#f4f7fb;font-family:Arial,Tahoma,sans-serif}
+a{color:inherit;text-decoration:none}header{position:sticky;top:0;z-index:10;background:rgba(8,9,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid #1d232d}
+.nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-size:22px;font-weight:800}.logo span{color:#9b7cff}.navlinks{display:flex;gap:18px;color:#aeb7c4;font-size:14px}.navlinks a:hover{color:#fff}
+main{max-width:1100px;margin:auto;padding:0 20px}.hero{text-align:center;padding:72px 10px 45px}.hero h1{font-size:48px;margin:0 0 12px}.hero h1 span{color:#9b7cff}.hero p{color:#9aa4b2;margin:0;font-size:17px}.section{padding:25px 0 55px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.section-title h2{margin:0;font-size:24px}.muted{color:#8f99a8;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card,.panel{background:#10141b;border:1px solid #202833;border-radius:18px;padding:18px}.app-top{display:flex;gap:14px;align-items:center}.app-icon{width:74px;height:74px;border-radius:17px;object-fit:cover;background:#171d26;border:1px solid #29313c}.app-name{margin:0 0 7px;font-size:19px}.app-desc{margin:0;color:#a6afbb;line-height:1.7;font-size:13px}.app-meta{margin-top:13px;color:#7f8a99;font-size:12px}.btn{border:0;border-radius:12px;padding:11px 15px;cursor:pointer;font-weight:700;font-size:14px}.primary{background:#9b7cff;color:#fff}.danger{background:#3a1518;color:#ff9b9b}.success{background:#153622;color:#8ce0a7}.ghost{background:#1a2029;color:#e8edf3}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.empty{text-align:center;color:#8e98a6;padding:35px}.auth-wrap{max-width:650px;margin:auto}.auth-card{background:#10141b;border:1px solid #202833;border-radius:18px;padding:22px}.auth-card h2{margin:0 0 8px}.auth-card>p{color:#9ba5b2;line-height:1.7;font-size:14px}.google-btn{width:100%;display:flex;justify-content:center;align-items:center;gap:10px;padding:13px;border-radius:12px;border:1px solid #c8cdd5;background:#fff;color:#202124;font-weight:700;cursor:pointer}.google-icon{width:20px;height:20px}.status{min-height:22px;margin-top:12px;color:#a9b3c0;font-size:13px}.user-box{display:none;margin-top:14px;padding:14px;border-radius:14px;background:#0c1117;border:1px solid #222c37}.user-box.show{display:block}.admin-badge{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:999px;background:#162a20;color:#79dfa1;font-size:12px}
+.form{display:grid;gap:12px}.field{display:grid;gap:7px}.field label{font-size:13px;color:#b9c2cd}.field input,.field textarea,.field select{width:100%;padding:12px;border-radius:11px;border:1px solid #29323e;background:#0b1016;color:#fff;outline:none}.field textarea{min-height:110px;resize:vertical}.field small{color:#7e8997;font-size:11px}.upload-box{border:1px dashed #394352;border-radius:13px;padding:14px;background:#0c1117}.progress{height:7px;background:#1b222c;border-radius:10px;overflow:hidden;margin-top:8px}.progress>div{height:100%;width:0;background:#9b7cff;transition:width .2s}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.list{display:grid;gap:10px;margin-top:12px}.row{padding:12px;border:1px solid #252e39;border-radius:12px;background:#0d1218}.row-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.tag{font-size:11px;padding:4px 8px;border-radius:999px;background:#222a35;color:#b9c2cf}.tag.pending{color:#ffd28a}.tag.approved{color:#8ce0a7}.tag.rejected{color:#ff9d9d}.row small{display:block;color:#7f8a98;margin-top:6px}.hidden{display:none!important}
+footer{text-align:center;color:#697482;padding:35px 20px;border-top:1px solid #1d232d;margin-top:30px}
+.upload-fab{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:30;
+  display:none;
+  align-items:center;
+  gap:7px;
+  padding:10px 13px;
+  border:1px solid #2b3340;
+  border-radius:999px;
+  background:#10141b;
+  color:#fff;
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+}
+.upload-fab.show{display:flex}
+.upload-fab:hover{background:#171d26}
+.upload-fab .plus{font-size:17px;line-height:1;color:#9b7cff}
+@media(max-width:760px){.grid,.admin-grid{grid-template-columns:1fr}.hero{padding-top:50px}.hero h1{font-size:38px}.nav{align-items:flex-start}.navlinks{gap:10px}}
+.logout-fab{position:fixed;left:18px;bottom:18px;z-index:1000;border:0;border-radius:999px;padding:11px 16px;background:#222;color:#fff;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.logout-fab:hover{transform:translateY(-1px)}
+.logout-fab.hidden{display:none}
+</style>
 </head>
-
 <body>
-
-  
-  <header class="header">
-    <div class="container nav-container">
-
-      <a href="#home" class="logo">
-        Amgad <span>gad</span>
-      </a>
-
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
+<header><div class="nav">
+  <div class="logo"><span>migo</span> store</div>
+  <nav class="navlinks"><a href="#home">الرئيسية</a><a href="#apps">التطبيقات</a><a href="#account" id="accountNav">الحساب</a><a href="#upload">رفع تطبيق</a></nav>
+</div></header>
+<button class="logout-fab hidden" id="logoutFab" type="button" onclick="signOutLocal()">↪ تسجيل الخروج</button>
+<button class="upload-fab" id="uploadFab" type="button" onclick="openUpload()">
+  <span class="plus">+</span><span>رفع تطبيق</span>
+</button>
+<main id="home">
+<section class="hero"><h1><span>migo</span> store</h1><p>تطبيقات وألعاب مجانية، يرفعها المستخدمون وتُنشر بعد مراجعة الإدارة.</p></section>
+<section class="section" id="apps">
+  <div class="section-title"><h2>التطبيقات والألعاب</h2><span class="muted" id="appsCount"></span></div>
+  <div id="appsGrid" class="grid"><div class="empty">جاري تحميل التطبيقات…</div></div>
+</section>
+<section class="section" id="account">
+  <div class="auth-wrap"><div class="auth-card">
+    <h2>حسابك في migo store</h2>
+    <p>سجّل الدخول باستخدام Google. بعد تسجيل الدخول يمكنك رفع ألعابك وتطبيقاتك ومتابعة حالة المراجعة.</p>
+    <button class="google-btn" id="googleBtn" type="button" onclick="startGoogleLogin()">
+      <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.35 12.23c0-.71-.06-1.4-.18-2.05H12v3.88h5.22a4.46 4.46 0 0 1-1.94 2.93v2.43h3.14c1.84-1.69 2.93-4.18 2.93-7.19z"/><path fill="#34A853" d="M12 21.82c2.63 0 4.84-.87 6.45-2.4l-3.14-2.43c-.87.58-1.98.93-3.31.93-2.55 0-4.71-1.72-5.49-4.03H3.27v2.5A9.74 9.74 0 0 0 12 21.82z"/><path fill="#FBBC05" d="M6.51 13.89A5.86 5.86 0 0 1 6.2 12c0-.66.11-1.3.31-1.89v-2.5H3.27A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.02 4.39l3.24-2.5z"/><path fill="#EA4335" d="M12 6.08c1.43 0 2.72.49 3.74 1.46l2.8-2.8C16.84 3.16 14.63 2.18 12 2.18a9.74 9.74 0 0 0-8.73 5.43l3.24 2.5C7.29 7.8 9.45 6.08 12 6.08z"/></svg>
+      <span>تسجيل الدخول باستخدام Google</span>
+    </button>
+    <div class="status" id="authStatus"></div>
+    <div class="user-box" id="userBox">
+      <div>الحساب الحالي:</div><div id="userEmail" style="font-weight:700;margin-top:5px"></div>
+      <div class="admin-badge hidden" id="adminBadge">ADMIN</div>
+      <div class="actions"><button class="btn ghost" type="button" onclick="signOutLocal()">تسجيل الخروج</button></div>
     </div>
-  </header>
-
-
-  
-  <main>
-
-    <section class="hero" id="home">
-
-      <div class="hero-overlay"></div>
-
-      <div class="container hero-content">
-
-        <div class="hero-text">
-
-          <p class="small-title">
-            <i class="fa-solid fa-gamepad"></i>
-            GAME CREATOR
-          </p>
-
-          <h1>
-            Amgad <span>gad</span>
-          </h1>
-
-          <h2>Amgad Gad - Game Creator</h2>
-
-          <p class="hero-description">
-            I am Amgad Gad, a game creator and web developer. I create games using Godot, build modern websites using
-            HTML, CSS and JavaScript, write stories for games,
-            and add advertisements to websites.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a href="#services" class="btn primary-btn">
-              My Services
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <a
-              href="https://wa.me/201221902098?text=Hello%20Amgad"
-              class="btn whatsapp-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-whatsapp"></i>
-              Contact Me
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    
-    <section class="services section" id="services">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            WHAT I DO
-          </p>
-
-          <h2>
-            My Services
-          </h2>
-
-          <p>
-            Creative digital services focused on games,
-            websites and interactive experiences.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-          
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-gamepad"></i>
-            </div>
-
-            <h3>
-              Game Development
-            </h3>
-
-            <p>
-              I create games using the Godot Engine with a focus
-              on fun gameplay and lightweight performance.
-            </p>
-
-          </article>
-
-
-          
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-code"></i>
-            </div>
-
-            <h3>
-              Web Development
-            </h3>
-
-            <p>
-              I build websites using HTML, CSS and JavaScript
-              with responsive designs for phones and computers.
-            </p>
-
-          </article>
-
-
-          
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-book-open"></i>
-            </div>
-
-            <h3>
-              Game Story Writing
-            </h3>
-
-            <p>
-              I write stories, characters and ideas that can make
-              games more interesting and immersive.
-            </p>
-
-          </article>
-
-
-          
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-rectangle-ad"></i>
-            </div>
-
-            <h3>
-              Website Ads
-            </h3>
-
-            <p>
-              I can add advertisements to websites and organize
-              their placement inside the website design.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-<div class="ad-container">
-  <script>
-  atOptions = {
-    'key' : 'cb79c5ed946c0c9753e221db7c5c0845',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
+  </div></div>
+</section>
+<section class="section hidden" id="upload">
+  <div class="section-title"><h2>رفع تطبيق أو لعبة</h2><span class="muted">يتم النشر بعد موافقة الإدارة</span></div>
+  <div class="panel">
+    <form class="form" id="uploadForm">
+      <div class="field"><label>اسم التطبيق / اللعبة</label><input id="appName" maxlength="80" required></div>
+      <div class="field"><label>الوصف</label><textarea id="appDescription" maxlength="500" placeholder="اكتب وصفًا مختصرًا للتطبيق أو اللعبة" required></textarea></div>
+      <div class="field"><label>الإصدار</label><input id="appVersion" maxlength="30" placeholder="مثال: 1.0.0"></div>
+      <div class="field"><label>التصنيف</label><select id="appCategory"><option>ألعاب</option><option>تطبيقات</option><option>تعليم</option><option>أدوات</option><option>ترفيه</option><option>أخرى</option></select></div>
+      <div class="upload-box"><div class="field"><label>صورة التطبيق</label><input id="iconFile" type="file" accept="image/png,image/jpeg,image/webp" required><small>PNG / JPG / WEBP — حتى 5MB</small></div></div>
+      <div class="upload-box"><div class="field"><label>ملف التطبيق APK</label><input id="apkFile" type="file" accept=".apk,application/vnd.android.package-archive" required><small>APK فقط — حتى 50MB</small></div></div>
+      <div class="progress"><div id="uploadProgress"></div></div>
+      <button class="btn primary" id="submitBtn" type="submit">إرسال للمراجعة</button>
+      <div class="status" id="uploadStatus"></div>
+    </form>
+  </div>
+</section>
+<section class="section hidden" id="myAppsSection">
+  <div class="section-title"><h2>تطبيقاتي</h2><span class="muted">حالة كل طلب</span></div>
+  <div id="myApps" class="grid"></div>
+</section>
+<section class="section hidden" id="admin">
+  <div class="section-title"><h2>لوحة الإدارة</h2><span class="muted">إدارة التطبيقات والحسابات</span></div>
+  <div class="admin-grid">
+    <div class="panel"><h3 style="margin-top:0">طلبات التطبيقات</h3><div id="adminApps" class="list"><div class="empty">لا توجد بيانات بعد.</div></div></div>
+    <div class="panel"><h3 style="margin-top:0">الحسابات المسجلة</h3><div id="adminUsers" class="list"><div class="empty">لا توجد بيانات بعد.</div></div></div>
+  </div>
+</section>
+</main>
+<footer>migo store</footer>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirectResult,onAuthStateChanged,signOut,setPersistence,browserLocalPersistence} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {getFirestore,collection,doc,getDoc,setDoc,addDoc,getDocs,updateDoc,deleteDoc,query,where,serverTimestamp,increment} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+const SUPABASE_URL="https://htxrcnnnwieljcwtehja.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_sjeYQmO6nHfw5Z9ksWCesQ_OiBk0p2Y";
+const SUPABASE_BUCKET="apps";
+const firebaseConfig={
+ apiKey:"AIzaSyDIVIiWxAGPRN1diUfnX3VG4XFEKhpQqi8",
+ authDomain:"migo-store.firebaseapp.com",
+ projectId:"migo-store",
+ storageBucket:"migo-store.firebasestorage.app",
+ messagingSenderId:"418438022956",
+ appId:"1:418438022956:web:832586300ca651a3124e89",
+ measurementId:"G-SMNL93EJSE"
+};
+const ADMIN_EMAIL="amgadgad358@gmail.com";
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
+const provider=new GoogleAuthProvider(); provider.setCustomParameters({prompt:"select_account"});
+setPersistence(auth,browserLocalPersistence).catch(console.error);
+const $=id=>document.getElementById(id);
+let currentUser=null,isAdmin=false;
+function status(msg,id="authStatus"){ $(id).textContent=msg||""; }
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function dateText(ts){if(!ts?.toDate)return "";return ts.toDate().toLocaleString("ar-EG");}
+async function ensureProfile(user){
+ const r=doc(db,"users",user.uid), snap=await getDoc(r);
+ if(!snap.exists()) await setDoc(r,{uid:user.uid,email:user.email||"",name:user.displayName||"",photoURL:user.photoURL||"",blocked:false,createdAt:serverTimestamp()});
+ return (await getDoc(r)).data();
+}
+async function loadPublicApps(){
+ const grid=$("appsGrid"); grid.innerHTML='<div class="empty">جاري تحميل التطبيقات…</div>';
+ try{
+   const snap=await getDocs(query(collection(db,"apps"),where("status","==","approved")));
+   const apps=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+   $("appsCount").textContent=apps.length+" تطبيق";
+   if(!apps.length){grid.innerHTML='<div class="empty">لا توجد تطبيقات منشورة حتى الآن.</div>';return;}
+   grid.innerHTML=apps.map(a=>`<article class="card">
+     <div class="app-top"><img class="app-icon" src="${esc(a.iconUrl)}" alt=""><div><h3 class="app-name">${esc(a.name)}</h3><p class="app-desc">${esc(a.description)}</p></div></div>
+     <div class="app-meta">${esc(a.category||"أخرى")} · الإصدار ${esc(a.version||"1.0")} · ${Number(a.downloads||0)} تحميل</div>
+     <div class="actions"><button class="btn primary" onclick="downloadApp('${a.id}')">تحميل APK</button></div>
+   </article>`).join("");
+ }catch(e){console.error(e);grid.innerHTML='<div class="empty">تعذر تحميل التطبيقات. تأكد من إعداد Firestore والقواعد.</div>';}
+}
+window.downloadApp=async id=>{
+ try{
+   const s=await getDoc(doc(db,"apps",id)); if(!s.exists())return;
+   const a=s.data(); if(a.status!=="approved")return;
+   window.open(a.apkUrl,"_blank","noopener");
+   await updateDoc(doc(db,"apps",id),{downloads:increment(1)});
+ }catch(e){alert("تعذر بدء التحميل.");}
+};
+window.startGoogleLogin=async()=>{
+ status("جاري فتح تسجيل الدخول باستخدام Google…");
+ try{
+   
+   const result=await signInWithPopup(auth,provider);
+   if(result?.user) status("تم تسجيل الدخول بالحساب: "+(result.user.email||""));
+ }catch(e){
+   console.error("Google popup error:",e);
+   const code=e?.code||"unknown";
+   const message=e?.message||"غير معروف";
+   if(code==="auth/popup-blocked" || code==="auth/cancelled-popup-request"){
+     try{
+       status("المتصفح منع النافذة، جاري المحاولة بطريقة إعادة التوجيه…");
+       await signInWithRedirect(auth,provider);
+       return;
+     }catch(e2){
+       console.error("Google redirect error:",e2);
+       status("خطأ Google: "+(e2?.code||"unknown")+" — "+(e2?.message||"غير معروف"));
+       return;
+     }
+   }
+   status("خطأ Google: "+code+" — "+message);
+ }
+};
+window.signOutLocal=async()=>{
+ const btn=document.querySelector('#userBox .ghost'); if(btn) btn.disabled=true;
+ try{
+  await signOut(auth); currentUser=null; isAdmin=false;
+  $("logoutFab").classList.add("hidden");
+  $("userBox").classList.remove("show"); $("account").classList.remove("hidden"); $("accountNav").classList.remove("hidden");
+  $("upload").classList.add("hidden"); $("uploadFab").classList.remove("show"); $("myAppsSection").classList.add("hidden"); $("admin").classList.add("hidden"); $("adminBadge").classList.add("hidden");
+  status("تم تسجيل الخروج بنجاح.");
+ }catch(e){ console.error(e); status("تعذر تسجيل الخروج: "+(e.message||"خطأ غير معروف")); if(btn) btn.disabled=false; }
+};
+function renderUser(user,data){
+ $("logoutFab").classList.remove("hidden");
+ $("userBox").classList.add("show");
+ $("userEmail").textContent=(user.displayName||"")+" — "+user.email;
+ isAdmin=(user.email||"").toLowerCase()===ADMIN_EMAIL.toLowerCase();
+ 
+ $("account").classList.add("hidden");
+ $("accountNav").classList.add("hidden");
+ $("adminBadge").classList.toggle("hidden",!isAdmin);
+ if(isAdmin){
+   $("adminApps").innerHTML='<div class="empty">لا توجد بيانات بعد.</div>';
+   $("adminUsers").innerHTML='<div class="empty">لا توجد بيانات بعد.</div>';
+ }
+ $("upload").classList.toggle("hidden",!user||data?.blocked===true);
+ $("uploadFab").classList.toggle("show",!!user&&data?.blocked!==true);
+ $("myAppsSection").classList.toggle("hidden",!user);
+ $("admin").classList.toggle("hidden",!isAdmin);
+ if(data?.blocked){
+   $("uploadStatus").textContent="هذا الحساب محظور من رفع التطبيقات.";
+   status("الحساب محظور. يمكنك التواصل مع الإدارة.");
+ }
+}
+async function loadMyApps(){
+ if(!currentUser)return;
+ const snap=await getDocs(query(collection(db,"apps"),where("ownerId","==",currentUser.uid)));
+ const apps=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+ $("myApps").innerHTML=apps.length?apps.map(a=>`<div class="card">
+   <div class="app-top">${a.iconUrl?`<img class="app-icon" src="${esc(a.iconUrl)}" alt="">`:""}<div><h3 class="app-name">${esc(a.name)}</h3><p class="app-desc">${esc(a.description)}</p></div></div>
+   <div class="app-meta">الحالة: <span class="tag ${esc(a.status)}">${a.status==="pending"?"قيد المراجعة":a.status==="approved"?"تمت الموافقة":"مرفوض"}</span></div>
+   <div class="app-meta">${dateText(a.createdAt)}</div>
+ </div>`).join(""):'<div class="empty">لم ترفع أي تطبيق بعد.</div>';
+}
+async function loadAdmin(){
+ if(!isAdmin)return;
+ const appsBox=$("adminApps"), usersBox=$("adminUsers");
+ appsBox.innerHTML='<div class="empty">جاري تحديث البيانات…</div>';
+ usersBox.innerHTML='<div class="empty">جاري تحديث البيانات…</div>';
+ try{
+   const [appsSnap,usersSnap]=await Promise.all([
+     getDocs(collection(db,"apps")),
+     getDocs(collection(db,"users"))
+   ]);
+   const apps=appsSnap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+   const users=usersSnap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+   appsBox.innerHTML=apps.length?apps.map(a=>`<div class="row">
+     <div class="row-top"><strong>${esc(a.name)}</strong><span class="tag ${esc(a.status)}">${esc(a.status)}</span></div>
+     <small>المالك: ${esc(a.ownerEmail||"")} · ${esc(a.category||"")}</small>
+     <div class="actions">
+      ${a.status!=="approved"?`<button class="btn success" onclick="setAppStatus('${a.id}','approved')">موافقة</button>`:""}
+      ${a.status!=="rejected"?`<button class="btn danger" onclick="setAppStatus('${a.id}','rejected')">رفض</button>`:""}
+      <button class="btn ghost" onclick="deleteAppAdmin('${a.id}')">حذف</button>
+     </div>
+   </div>`).join(""):'<div class="empty">لا توجد طلبات.</div>';
+   usersBox.innerHTML=users.length?users.map(u=>`<div class="row">
+     <div class="row-top"><strong>${esc(u.name||"بدون اسم")}</strong><span class="tag">${u.blocked?"محظور":"نشط"}</span></div>
+     <small>${esc(u.email||"")}</small>
+     <div class="actions">${u.email?.toLowerCase()!==ADMIN_EMAIL.toLowerCase()?`<button class="btn ${u.blocked?"success":"danger"}" onclick="toggleBlock('${u.id}',${!u.blocked})">${u.blocked?"إلغاء الحظر":"حظر الحساب"}</button>`:"<span class='muted'>حساب الإدارة</span>"}</div>
+   </div>`).join(""):'<div class="empty">لا توجد حسابات.</div>';
+ }catch(e){
+   console.error("Admin data error:",e);
+   appsBox.innerHTML='<div class="empty">تعذر تحميل طلبات التطبيقات. تحقق من Firestore Rules.</div>';
+   usersBox.innerHTML='<div class="empty">تعذر تحميل الحسابات. تحقق من Firestore Rules.</div>';
+ }
+}
+window.setAppStatus=async(id,newStatus)=>{
+ if(!isAdmin)return;
+ try{await updateDoc(doc(db,"apps",id),{status:newStatus,reviewedAt:serverTimestamp(),reviewedBy:auth.currentUser.email});await loadAdmin();await loadPublicApps();await loadMyApps();}
+ catch(e){alert("تعذر تحديث حالة التطبيق: "+e.message);}
+};
+window.toggleBlock=async(uid,blocked)=>{
+ if(!isAdmin)return;
+ try{await updateDoc(doc(db,"users",uid),{blocked});await loadAdmin();}
+ catch(e){alert("تعذر تغيير حالة الحساب: "+e.message);}
+};
+window.deleteAppAdmin=async id=>{
+ if(!isAdmin)return;
+ if(!confirm("هل تريد حذف هذا التطبيق نهائيًا؟"))return;
+ try{
+   const s=await getDoc(doc(db,"apps",id)); if(!s.exists())return;
+   const a=s.data();
+   await deleteDoc(doc(db,"apps",id)); await loadAdmin(); await loadPublicApps();
+ }catch(e){alert("تعذر حذف التطبيق: "+e.message);}
+};
+window.openUpload=()=>{
+  const section=$("upload");
+  if(!section || section.classList.contains("hidden")) return;
+  section.scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(()=>$("appName")?.focus(),450);
+};
+$("uploadForm").addEventListener("submit",async ev=>{
+ ev.preventDefault();
+ if(!currentUser){alert("سجّل الدخول أولًا.");return;}
+ const name=$("appName").value.trim(),description=$("appDescription").value.trim(),version=$("appVersion").value.trim()||"1.0",category=$("appCategory").value;
+ const icon=$("iconFile").files[0],apk=$("apkFile").files[0];
+ if(!icon||!apk)return;
+ if(icon.size>5*1024*1024){alert("صورة التطبيق أكبر من 5MB.");return;}
+ if(apk.size>50*1024*1024){alert("ملف APK أكبر من 50MB.");return;}
+ if(!/\.apk$/i.test(apk.name)){alert("اختر ملف APK صحيح.");return;}
+ const btn=$("submitBtn");btn.disabled=true;$("uploadProgress").style.width="0%";status("جاري رفع الملفات…","uploadStatus");
+ try{
+   const profile=await ensureProfile(currentUser);
+   if(profile.blocked)throw new Error("هذا الحساب محظور.");
+   const id=crypto.randomUUID();
+   const iconPath=`${currentUser.uid}/${id}/icon-${Date.now()}.${(icon.name.split(".").pop()||"png")}`;
+   const apkPath=`${currentUser.uid}/${id}/app-${Date.now()}.apk`;
+   async function uploadOne(path,file,start,end){
+     
+     
+     const encodedPath=path.split("/").map(encodeURIComponent).join("/");
+     const url=SUPABASE_URL+"/storage/v1/object/"+SUPABASE_BUCKET+"/"+encodedPath;
+     let response;
+     try{
+       response=await fetch(url,{
+         method:"POST",
+         mode:"cors",
+         credentials:"omit",
+         headers:{
+           "apikey":SUPABASE_ANON_KEY,
+           "Content-Type":file.type||"application/octet-stream",
+           "x-upsert":"false"
+         },
+         body:file
+       });
+     }catch(networkError){
+       throw new Error("فشل الاتصال بـ Supabase. تأكد من Project URL وStorage/CORS وإعدادات الشبكة.");
+     }
+     if(!response.ok){
+       let detail="";
+       try{
+         const text=await response.text();
+         try{const j=JSON.parse(text);detail=j.message||j.error_description||j.error||text;}catch(_){detail=text;}
+       }catch(_){}
+       throw new Error("Supabase Storage "+response.status+(detail?": "+detail:""));
+     }
+     $("uploadProgress").style.width=end+"%";
+     return SUPABASE_URL+"/storage/v1/object/public/"+SUPABASE_BUCKET+"/"+encodedPath;
+   }
+   const iconUrl=await uploadOne(iconPath,icon,0,25);
+   const apkUrl=await uploadOne(apkPath,apk,25,100);
+   await setDoc(doc(db,"apps",id),{
+     name,description,version,category,ownerId:currentUser.uid,ownerEmail:currentUser.email||"",ownerName:currentUser.displayName||"",
+     iconUrl,apkUrl,iconPath,apkPath,status:"pending",downloads:0,createdAt:serverTimestamp()
+   });
+   ev.target.reset();$("uploadProgress").style.width="100%";status("تم إرسال التطبيق للمراجعة. لن يظهر للناس حتى توافق الإدارة.","uploadStatus");await loadMyApps();
+ }catch(e){console.error(e);status("تعذر رفع التطبيق: "+(e.message||"تحقق من إعدادات Firebase والقواعد."),"uploadStatus");}
+ finally{btn.disabled=false;}
+});
+getRedirectResult(auth).then(result=>{
+  if(result?.user) status("تم تسجيل الدخول.");
+}).catch(e=>{
+  console.error("Google redirect error:",e);
+  const code=e?.code||"unknown";
+  const message=e?.message||"تعذر إكمال تسجيل الدخول";
+  status("خطأ Google: "+code+" — "+message);
+});
+onAuthStateChanged(auth,async user=>{
+ currentUser=user;
+ if(!user){
+   $("logoutFab").classList.add("hidden");
+   $("userBox").classList.remove("show");
+   $("adminBadge").classList.add("hidden");
+   $("upload").classList.add("hidden");
+   $("uploadFab").classList.remove("show");
+   $("myAppsSection").classList.add("hidden");
+   $("admin").classList.add("hidden");
+   $("account").classList.remove("hidden");
+   $("accountNav").classList.remove("hidden");
+   return;
+ }
+ try{
+   renderUser(user,{blocked:false});
+   status("تم تسجيل الدخول بالحساب: "+user.email);
+   try{
+     const profile=await ensureProfile(user);
+     renderUser(user,profile);
+     await loadMyApps();
+     if(isAdmin) await loadAdmin();
+   }catch(profileError){
+     console.error("Firestore profile error:",profileError);
+     status("تم تسجيل الدخول، لكن تعذر تحميل بيانات الحساب: "+(profileError.code||profileError.message||"خطأ غير معروف"));
+   }
+ }catch(e){
+   console.error("Auth UI error:",e);
+   status("تعذر تجهيز واجهة الحساب: "+(e.message||"خطأ غير معروف"));
+ }
+});
+loadPublicApps();
 </script>
-<script src="https://www.highrevenueformat.com/cb79c5ed946c0c9753e221db7c5c0845/invoke.js"></script>
-</div>
-
-    
-    <section class="about section" id="about">
-
-      <div class="container">
-
-        <div class="about-box">
-
-          <div class="about-icon">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-
-          <div class="about-content">
-
-            <p class="section-label">
-              ABOUT ME
-            </p>
-
-            <h2>
-              I'm Amgad gad
-            </h2>
-
-            <p>
-              I'm a game creator interested in developing games
-              with Godot and creating websites using HTML, CSS
-              and JavaScript.
-            </p>
-
-            <p>
-              I also enjoy creating stories and ideas for games.
-            </p>
-
-            <p>
-              I'm currently working on building my skills
-              and creating my first projects.
-            </p>
-
-            
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    
-    <section class="contact section" id="contact">
-
-      <div class="container">
-
-        <div class="contact-card">
-
-          <p class="section-label">
-            GET IN TOUCH
-          </p>
-
-          <h2>
-            Let's Create Something
-          </h2>
-
-          <p>
-            Have an idea for a game or website?
-            Contact me directly on WhatsApp.
-          </p>
-
-          <a
-            href="https://wa.me/201221902098?text=Hello%20Amgad"
-            class="contact-whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-
-            Contact me on WhatsApp
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-<div class="ad-container">
-   <script>
-  atOptions = {
-    'key' : 'cb79c5ed946c0c9753e221db7c5c0845',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highrevenueformat.com/cb79c5ed946c0c9753e221db7c5c0845/invoke.js"></script>
-</div>
-
-  
-  <footer class="footer">
-
-    <div class="container footer-content">
-
-      <div>
-
-        <h3>
-          Amgad <span>gad</span>
-        </h3>
-
-        <p>
-          Game Creator & Web Developer
-        </p>
-
-      </div>
-
-
-      <div class="social-links">
-
-        <a href="#home" aria-label="Home">
-          <i class="fa-solid fa-house"></i>
-        </a>
-
-        <a
-          href="https://wa.me/201221902098"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="copyright">
-      © 2026 Amgad gad. All rights reserved.
-    </div>
-
-  </footer>
-
 </body>
 </html>
